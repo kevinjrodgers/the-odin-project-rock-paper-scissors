@@ -18,14 +18,12 @@
           return -1;
         }
       }
-      let playerHand = prompt("Please choose your hand (Rock, Paper, or Scissors)");
-      playerHand.toLowerCase();
-      console.log(computerPlay());
+
       function playRound(playerSelection, computerSelection) {
         if((playerSelection == "rock" && computerSelection == "scissors") ||
         (playerSelection == "paper" && computerSelection == "rock") ||
-        (playerSelection == "scissors" && computerSelection == "paper") {
-          console.log("You win! " + playerSelection + "beats " + computerSelection);
+        (playerSelection == "scissors" && computerSelection == "paper")) {
+          console.log("You win! " + playerSelection + " beats " + computerSelection);
         }
         else if((playerSelection == "rock" && computerSelection == "rock") ||
         (playerSelection == "paper" && computerSelection == "paper") ||
@@ -34,8 +32,16 @@
         }
         else if((playerSelection == "rock" && computerSelection == "paper") ||
         (playerSelection == "paper" && computerSelection == "scissors") ||
-        (playerSelection == "scissors" && computerSelection == "rock") {
-          console.log("You lose! " + playerSelection + "doesn\'t beat " + computerSelection)
+        (playerSelection == "scissors" && computerSelection == "rock")) {
+          console.log("You lose! " + playerSelection + " doesn\'t beat " + computerSelection);
+        }
+      }
+
+      function game() {
+        let playerHand = prompt("Please choose your hand (Rock, Paper, or Scissors)");
+        playerHand.toLowerCase();
+        let computerHand = computerPlay();
+        playRound(playerHand, computerHand);
       }
     </script>
   </head>
