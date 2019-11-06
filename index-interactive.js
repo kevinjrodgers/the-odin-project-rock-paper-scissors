@@ -80,12 +80,33 @@ function game() {
       let winnerLabel = document.createElement("h1");
       winnerLabel.innerHTML = "Player wins!";
       body.appendChild(winnerLabel);
+      disableRPSButtons();
+      let restartButton = document.createElement("button");
+      restartButton.innerHTML = "Press Me to Restart";
+      restartButton.addEventListener("click", () => {
+        //Refreshes the page
+        window.location.reload();
+      });
+      body.appendChild(restartButton);
     }
     else {
       let winnerLabel = document.createElement("h1");
       winnerLabel.innerHTML = "Computer wins...";
       body.appendChild(winnerLabel);
+      let restartButton = document.createElement("button");
+      disableRPSButtons();
+      restartButton.innerHTML = "Press Me to Restart";
+      body.appendChild(restartButton);
+      restartButton.addEventListener("click", () => {
+        //Refreshes the page
+        window.location.reload();
+      });
     }
   }
+}
 
+function disableRPSButtons() {
+  rockButton.disabled = true;
+  paperButton.disabled = true;
+  scissorsButton.disabled = true;
 }
